@@ -1,0 +1,10 @@
+from pyowm.owm import OWM
+owm = OWM('2e2abc5781ed9df22dd627dd7555ac43')
+mgr = owm.weather_manager()
+print('in')
+weather = mgr.weather_at_place('Chennai,IN').weather
+print(weather.detailed_status) #status-- cloudy
+temp_dict_celsius = weather.temperature('celsius')# Dictionary containing temp in celsius
+
+print(temp_dict_celsius['temp'])
+ 
